@@ -60,4 +60,123 @@
       border-radius: 12px;
       padding: 25px;
       margin-bottom: 30px;
-      transition: transform 0.3s
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,170,255,0.4);
+    }
+    .card h2 { color: #00aaff; margin-bottom: 15px; }
+    .card p, .card ul { color: #c0d6e4; }
+
+    /* Кнопки */
+    .button {
+      display: inline-block;
+      padding: 15px 30px;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #0077b6, #00b4d8);
+      color: #fff;
+      font-weight: 700;
+      transition: 0.3s;
+      text-align: center;
+    }
+    .button:hover {
+      background: linear-gradient(90deg, #00b4d8, #0077b6);
+      box-shadow: 0 5px 15px rgba(0,180,216,0.5);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #102a44;
+      color: #888;
+      font-size: 14px;
+    }
+
+    /* Сетка товаров */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .product-card {
+      background: #1b3955;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,170,255,0.4);
+    }
+    .product-card img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .product-card h3 {
+      color: #00aaff;
+      margin-bottom: 10px;
+    }
+    .product-card p { color: #c0d6e4; }
+  </style>
+</head>
+<body>
+
+<header>ROKAVTO</header>
+
+<nav>
+  <a href="#products">Товары</a>
+  <a href="#contacts">Контакты</a>
+  <a href="#whatsapp">WhatsApp</a>
+</nav>
+
+<div class="container">
+
+  <div class="card" id="intro">
+    <h2>Автозапчасти в наличии и под заказ</h2>
+    <p>Подбор по VIN, честные цены и быстрые сроки доставки по России. Сделайте заказ прямо сейчас!</p>
+  </div>
+
+  <div class="card" id="products">
+    <h2>Популярные товары</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/250x150?text=Тормозные+колодки" alt="Тормозные колодки">
+        <h3>Тормозные колодки BMW G20</h3>
+        <p>Цена: 4500₽</p>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/250x150?text=Фильтры" alt="Фильтры">
+        <h3>Фильтры масла и салона</h3>
+        <p>Цена: 1200₽</p>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/250x150?text=Амортизаторы" alt="Амортизаторы">
+        <h3>Амортизаторы и пружины</h3>
+        <p>Цена: 8000₽</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" id="whatsapp">
+    <a class="button" href="https://wa.me/79221635353">Написать в WhatsApp</a>
+  </div>
+
+  <div class="card" id="contacts">
+    <h2>Контакты</h2>
+    <p>Тел.: +7 (863) 303-44-99</p>
+    <p>Моб.: +7 (922) 163-53-53</p>
+    <p>Адрес: г. Краснодар, ул. Вишняковой, 3</p>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 ROKAVTO. Все права защищены.
+</footer>
+
+</body>
+</html>
