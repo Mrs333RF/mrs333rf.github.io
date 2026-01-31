@@ -5,11 +5,57 @@
   <title>ROKAVTO — автозапчасти</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    header {
-  display: flex;
-  align-items: center; /* ВАЖНО — выравнивает как у Exist */
-  gap: 20px;
+    .header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #0b2c5d;
+  padding: 12px 0;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
+
+.header-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.logo {
+  height: 48px;
+}
+
+.search {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+}
+
+.search input {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: none;
+  font-size: 15px;
+}
+
+.search button {
+  padding: 12px 22px;
+  background: #1e90ff;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.search button:hover {
+  background: #1877d5;
+}
+</style>
 
 header img.logo {
   height: 48px;
@@ -134,12 +180,14 @@ header img.logo {
 </head>
 <body>
 
-<header>
-  <img src="logoza.ru.png" alt="ROKAVTO" class="logo">
+<header class="header">
+  <div class="header-inner">
+    <img src="logoza.ru.png" alt="ROKAVTO" class="logo">
 
-  <div class="search">
-    <input type="text" placeholder="VIN или номер запчасти">
-    <button>Найти</button>
+    <div class="search">
+      <input type="text" placeholder="VIN или номер запчасти">
+      <button>Найти</button>
+    </div>
   </div>
 </header>
   
