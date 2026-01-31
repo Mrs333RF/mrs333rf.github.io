@@ -139,6 +139,48 @@ footer a {
   text-decoration: none;
   font-weight: bold;
 }
+   /* ===== MENU ===== */
+.nav {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 28px;
+}
+
+.nav a {
+  display: block;
+  padding: 14px 0;
+  color: #0b2c5d;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav a:hover {
+  color: #1e90ff;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background: #1e90ff;
+  transition: 0.2s;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
 </style>
 
 
@@ -152,7 +194,17 @@ footer a {
     </div>
   </div>
 </header>
-  
+  <nav class="nav">
+  <div class="nav-inner">
+    <a href="#">Каталог</a>
+    <a href="#">Подбор по VIN</a>
+    <a href="#">Доставка</a>
+    <a href="#">Оплата</a>
+    <a href="#">Гарантия</a>
+    <a href="#">Контакты</a>
+  </div>
+</nav>
+
 
 <div class="container">
 
