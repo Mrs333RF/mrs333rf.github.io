@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <title>ROKAVTO — автозапчасти</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
- <style>
+  <style>
+/* ===== BODY ===== */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -62,6 +63,116 @@ body {
 
 .search button:hover {
   background: #1877d5;
+}
+
+/* ===== CART ===== */
+.cart {
+  position: relative;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+}
+
+.cart-icon {
+  font-size: 20px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: #ff3b30;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  min-width: 18px;
+  text-align: center;
+}
+
+.cart-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 36px;
+  width: 280px;
+  background: #fff;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  padding: 15px;
+  z-index: 2000;
+}
+
+.cart:hover .cart-dropdown {
+  display: block;
+}
+
+.cart-dropdown h4 {
+  margin: 0 0 10px;
+}
+
+.cart-items div {
+  margin-bottom: 5px;
+}
+
+.cart-total {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.cart-button {
+  display: block;
+  margin-top: 15px;
+  text-align: center;
+  background: #1e90ff;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ===== MENU ===== */
+.nav {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 28px;
+}
+
+.nav a {
+  display: block;
+  padding: 14px 0;
+  color: #0b2c5d;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav a:hover {
+  color: #1e90ff;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background: #1e90ff;
+  transition: 0.2s;
+}
+
+.nav a:hover::after {
+  width: 100%;
 }
 
 /* ===== CONTENT ===== */
@@ -139,128 +250,11 @@ footer a {
   text-decoration: none;
   font-weight: bold;
 }
-   /* ===== MENU ===== */
-.nav {
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
-}
+  </style>
+</head>
+<body>
 
-.nav-inner {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 20px;
-  display: flex;
-  gap: 28px;
-}
-
-.nav a {
-  display: block;
-  padding: 14px 0;
-  color: #0b2c5d;
-  font-weight: bold;
-  text-decoration: none;
-  position: relative;
-}
-
-.nav a:hover {
-  color: #1e90ff;
-}
-
-.nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 3px;
-  width: 0;
-  background: #1e90ff;
-  transition: 0.2s;
-}
-
-.nav a:hover::after {
-  width: 100%;
-}
-/* ===== CART ===== */
-.cart {
-  position: relative;
-  cursor: pointer;
-  color: #fff;
-  font-weight: bold;
-}
-
-.cart-icon {
-  font-size: 20px;
-}
-
-.cart-count {
-  position: absolute;
-  top: -6px;
-  right: -10px;
-  background: #ff3b30;
-  color: #fff;
-  font-size: 12px;
-  padding: 2px 6px;
-  border-radius: 50%;
-  min-width: 18px;
-  text-align: center;
-}
-
-/* dropdown */
-.cart-dropdown {
-  display: none;
-  position: absolute;
-  right: 0;
-  top: 36px;
-  width: 280px;
-  background: #fff;
-  color: #333;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  padding: 15px;
-  z-index: 2000;
-}
-
-.cart:hover .cart-dropdown {
-  display: block;
-}
-
-.cart-dropdown h4 {
-  margin: 0 0 10px;
-}
-
-.cart-empty {
-  font-size: 14px;
-  color: #777;
-}
-
-.cart-button {
-  display: block;
-  margin-top: 15px;
-  text-align: center;
-  background: #1e90ff;
-  color: #fff;
-  padding: 10px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-}
-   .add-to-cart {
-  margin-top: 10px;
-  padding: 10px 16px;
-  background: #1e90ff;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.add-to-cart:hover {
-  background: #1877d5;
-}
-
-</style>
-
+<!-- ===== HEADER ===== -->
 <header class="header">
   <div class="header-inner">
     <img src="logoza.ru.png" class="logo" alt="ROKAVTO">
@@ -276,15 +270,27 @@ footer a {
 
       <div class="cart-dropdown">
         <h4>Корзина</h4>
-        <div class="cart-empty">Корзина пуста</div>
+        <div class="cart-items"></div>
+        <div class="cart-total">Итого: 0 ₽</div>
         <a href="#" class="cart-button">Перейти в корзину</a>
       </div>
     </div>
   </div>
 </header>
 
+<!-- ===== MENU ===== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#">Каталог</a>
+    <a href="#">Подбор по VIN</a>
+    <a href="#">Доставка</a>
+    <a href="#">Оплата</a>
+    <a href="#">Гарантия</a>
+    <a href="#">Контакты</a>
+  </div>
+</nav>
 
-
+<!-- ===== MAIN CONTENT ===== -->
 <div class="container">
 
   <div class="banner">
@@ -309,7 +315,6 @@ footer a {
         В корзину
       </button>
     </div>
-
     <div class="product">
       <h3>Масляный фильтр</h3>
       <p class="price">450 ₽</p>
@@ -317,7 +322,6 @@ footer a {
         В корзину
       </button>
     </div>
-
     <div class="product">
       <h3>Фара левая</h3>
       <p class="price">3 200 ₽</p>
@@ -336,46 +340,50 @@ footer a {
 
 </div>
 
-
+<!-- ===== FOOTER ===== -->
 <footer>
   © 2026 ROKAVTO — Все права защищены | 
   <a href="https://wa.me/79221635353">WhatsApp</a>
 </footer>
+
+<!-- ===== JS для корзины ===== -->
 <script>
-  let cart = [];
-  const cartCount = document.querySelector('.cart-count');
-  const cartDropdown = document.querySelector('.cart-dropdown');
+const cartCount = document.querySelector('.cart-count');
+const cartItemsContainer = document.querySelector('.cart-items');
+const cartTotal = document.querySelector('.cart-total');
 
-  document.querySelectorAll('.add-to-cart').forEach(button => {
-    button.addEventListener('click', () => {
-      const name = button.dataset.name;
-      const price = button.dataset.price;
+let cart = [];
 
-      cart.push({ name, price });
-      updateCart();
-    });
+document.querySelectorAll('.add-to-cart').forEach(button => {
+  button.addEventListener('click', () => {
+    const name = button.dataset.name;
+    const price = parseInt(button.dataset.price);
+    
+    let item = cart.find(i => i.name === name);
+    if (item) {
+      item.qty += 1;
+    } else {
+      cart.push({name, price, qty: 1});
+    }
+    updateCart();
+  });
+});
+
+function updateCart() {
+  const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+  cartCount.textContent = totalQty;
+
+  cartItemsContainer.innerHTML = '';
+  let totalPrice = 0;
+  cart.forEach(item => {
+    totalPrice += item.price * item.qty;
+    const div = document.createElement('div');
+    div.textContent = `${item.name} × ${item.qty} — ${item.price * item.qty} ₽`;
+    cartItemsContainer.appendChild(div);
   });
 
-  function updateCart() {
-    cartCount.textContent = cart.length;
-
-    let html = '<h4>Корзина</h4>';
-
-    if (cart.length === 0) {
-      html += '<div class="cart-empty">Корзина пуста</div>';
-    } else {
-      let total = 0;
-      cart.forEach(item => {
-        total += Number(item.price);
-        html += `<div>${item.name} — ${item.price} ₽</div>`;
-      });
-      html += `<hr><strong>Итого: ${total} ₽</strong>`;
-    }
-
-    html += '<a href="#" class="cart-button">Оформить заказ</a>';
-    cartDropdown.innerHTML = html;
-  }
+  cartTotal.textContent = `Итого: ${totalPrice} ₽`;
+}
 </script>
-
 </body>
 </html>
