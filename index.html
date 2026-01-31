@@ -180,30 +180,95 @@ footer a {
 .nav a:hover::after {
   width: 100%;
 }
+/* ===== CART ===== */
+.cart {
+  position: relative;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+}
+
+.cart-icon {
+  font-size: 20px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: #ff3b30;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  min-width: 18px;
+  text-align: center;
+}
+
+/* dropdown */
+.cart-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 36px;
+  width: 280px;
+  background: #fff;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  padding: 15px;
+  z-index: 2000;
+}
+
+.cart:hover .cart-dropdown {
+  display: block;
+}
+
+.cart-dropdown h4 {
+  margin: 0 0 10px;
+}
+
+.cart-empty {
+  font-size: 14px;
+  color: #777;
+}
+
+.cart-button {
+  display: block;
+  margin-top: 15px;
+  text-align: center;
+  background: #1e90ff;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
 
 </style>
 
 
 <header class="header">
-  <div class="header-inner">
-    <img src="logoza.ru.png" alt="ROKAVTO" class="logo">
+<div class="header-inner">
+  <img src="logoza.ru.png" class="logo" alt="ROKAVTO">
 
-    <div class="search">
-      <input type="text" placeholder="VIN или номер запчасти">
-      <button>Найти</button>
+  <div class="search">
+    <input type="text" placeholder="VIN или номер запчасти">
+    <button>Найти</button>
+  </div>
+
+  <div class="cart">
+    <span class="cart-icon">🛒</span>
+    <span class="cart-count">0</span>
+
+    <div class="cart-dropdown">
+      <h4>Корзина</h4>
+      <div class="cart-empty">Корзина пуста</div>
+      <a href="#" class="cart-button">Перейти в корзину</a>
     </div>
   </div>
-</header>
-  <nav class="nav">
-  <div class="nav-inner">
-    <a href="#">Каталог</a>
-    <a href="#">Подбор по VIN</a>
-    <a href="#">Доставка</a>
-    <a href="#">Оплата</a>
-    <a href="#">Гарантия</a>
-    <a href="#">Контакты</a>
-  </div>
-</nav>
+</div>
+
 
 
 <div class="container">
