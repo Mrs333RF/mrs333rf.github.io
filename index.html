@@ -5,6 +5,16 @@
   <title>ROKAVTO — автозапчасти</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+    header {
+  display: flex;
+  align-items: center; /* ВАЖНО — выравнивает как у Exist */
+  gap: 20px;
+}
+
+header img.logo {
+  height: 48px;
+  object-fit: contain;
+}
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -125,13 +135,12 @@
 <body>
 
 <header>
-  <img src="logoza.ru.png" alt="ROKAVTO">style="height:50px">
+  <img src="logoza.ru.png" alt="ROKAVTO" class="logo">
+
   <div class="search">
     <input type="text" placeholder="VIN или номер запчасти">
     <button>Найти</button>
-  header img {
-  height: 48px;
-}</div>
+  </div>
 </header>
   
 
