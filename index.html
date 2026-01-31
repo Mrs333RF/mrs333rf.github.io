@@ -244,6 +244,21 @@ footer a {
   text-decoration: none;
   font-weight: bold;
 }
+   .add-to-cart {
+  margin-top: 10px;
+  padding: 10px 16px;
+  background: #1e90ff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add-to-cart:hover {
+  background: #1877d5;
+}
+
 </style>
 
 <header class="header">
@@ -286,13 +301,14 @@ footer a {
   </div>
 
   <h2>Популярные товары</h2>
-  <div class="products">
-    <div class="product">
-      <h3>Тормозные колодки</h3>
-      <p class="price">1 500 ₽</p>
-      <button class="add-to-cart" data-name="Тормозные колодки" data-price="1500">
-  В корзину
-</button>
+  <div class="product">
+  <h3>Тормозные колодки</h3>
+  <p class="price">1 395 ₽</p>
+  <button class="add-to-cart" data-name="Тормозные колодки" data-price="1395">
+    В корзину
+  </button>
+</div>
+
 
     </div>
     <div class="product">
@@ -320,6 +336,41 @@ footer a {
   © 2026 ROKAVTO — Все права защищены | 
   <a href="https://wa.me/79221635353">WhatsApp</a>
 </footer>
+<script>
+  let cart = [];
+  const cartCount = document.querySelector('.cart-count');
+  const cartDropdown = document.querySelector('.cart-dropdown');
+
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+      const name = button.dataset.name;
+      const price = button.dataset.price;
+
+      cart.push({ name, price });
+      updateCart();
+    });
+  });
+
+  function updateCart() {
+    cartCount.textContent = cart.length;
+
+    let html = '<h4>Корзина</h4>';
+
+    if (cart.length === 0) {
+      html += '<div class="cart-empty">Корзина пуста</div>';
+    } else {
+      let total = 0;
+      cart.forEach(item => {
+        total += Number(item.price);
+        html += `<div>${item.name} — ${item.price} ₽</div>`;
+      });
+      html += `<hr><strong>Итого: ${total} ₽</strong>`;
+    }
+
+    html += '<a href="#" class="cart-button">Оформить заказ</a>';
+    cartDropdown.innerHTML = html;
+  }
+</script>
 
 </body>
 </html>
