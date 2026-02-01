@@ -337,6 +337,85 @@ footer a {
 .order-form button:hover {
   background: #1e90ff;
 }
+    .section-title {
+  text-align: center;
+  margin: 40px 0 30px;
+}
+
+.contacts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.contact-card,
+.order-form {
+  background: #fff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.contact-card h3,
+.order-form h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #0b2c5d;
+}
+
+.contact-card a {
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+.order-form label {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 14px;
+}
+
+.order-form input,
+.order-form textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+.order-form textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.order-form button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  background: #1e90ff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.order-form button:hover {
+  background: #1877d5;
+}
+
+.contact-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: #0b2c5d;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
 
   </style>
 </head>
@@ -426,13 +505,19 @@ footer a {
     <div class="adv">Подбор по VIN</div>
   </div>
   
-  <h2>Контакты</h2>
+<h2 class="section-title">Контакты</h2>
 
-<div class="contacts">
+<div class="contacts-grid">
+
+  <!-- Левая колонка -->
   <div class="contact-card">
     <h3>ROKAVTO</h3>
-    <p><strong>Телефон:</strong> <a href="tel:+79221635353">+7 (922) 163-53-53</a></p>
-    <p><strong>Email:</strong> <a href="mailto:info@rokavto.ru">info@rokavto.ru</a></p>
+    <p><strong>Телефон:</strong><br>
+      <a href="tel:+79221635353">+7 (922) 163-53-53</a>
+    </p>
+    <p><strong>Email:</strong><br>
+      <a href="mailto:info@rokavto.ru">info@rokavto.ru</a>
+    </p>
     <p><strong>Город:</strong> Краснодар</p>
     <p><strong>График работы:</strong><br>
       Пн–Пт: 9:00–18:00<br>
@@ -441,47 +526,49 @@ footer a {
     </p>
   </div>
 
-  <h2>Оставить заявку</h2>
-<div class="order-form">
-  <form action="mailto:info@rokavto.ru" method="post" enctype="text/plain">
-    
-    <label>
-      Ваше имя
-      <input type="text" name="Имя" placeholder="Иван" required>
-    </label>
+  <!-- Центр -->
+  <div class="order-form">
+    <h3>Оставить заявку</h3>
 
-    <label>
-      Телефон
-      <input type="tel" name="Телефон" placeholder="+7 (___) ___-__-__" required>
-    </label>
+    <form action="mailto:info@rokavto.ru" method="post" enctype="text/plain">
 
-    <label>
-      VIN или артикул
-      <input type="text" name="VIN / Артикул" placeholder="VIN или номер детали">
-    </label>
+      <label>
+        Ваше имя
+        <input type="text" name="Имя" placeholder="Иван" required>
+      </label>
 
-    <label>
-      Комментарий
-      <textarea name="Комментарий" placeholder="Что нужно подобрать?"></textarea>
-    </label>
+      <label>
+        Телефон
+        <input type="tel" name="Телефон" placeholder="+7 (___) ___-__-__" required>
+      </label>
 
-    <button type="submit">Отправить заявку</button>
-  </form>
-</div>
+      <label>
+        VIN или артикул
+        <input type="text" name="VIN / Артикул" placeholder="VIN или номер детали">
+      </label>
 
+      <label>
+        Комментарий
+        <textarea name="Комментарий" placeholder="Что нужно подобрать?"></textarea>
+      </label>
+
+      <button type="submit">Отправить заявку</button>
+    </form>
+  </div>
+
+  <!-- Правая колонка -->
   <div class="contact-card">
     <h3>Написать нам</h3>
     <p>
-      Подбор запчастей по VIN, цены, сроки доставки — ответим быстро.
+      Подбор запчастей по VIN, цены и сроки доставки — ответим быстро.
     </p>
     <a class="contact-button" href="mailto:info@rokavto.ru">
       Написать на почту
     </a>
   </div>
-</div>
-
 
 </div>
+
 
 <!-- ===== FOOTER ===== -->
 <footer>
