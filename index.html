@@ -250,6 +250,43 @@ footer a {
   text-decoration: none;
   font-weight: bold;
 }
+    /* ===== CONTACTS ===== */
+.contacts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.contact-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.contact-card h3 {
+  margin-top: 0;
+  color: #0b2c5d;
+}
+
+.contact-card a {
+  color: #1e90ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 20px;
+  background: #1e90ff;
+  color: #fff !important;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
   </style>
 </head>
 <body>
@@ -337,6 +374,33 @@ footer a {
     <div class="adv">Честные цены</div>
     <div class="adv">Подбор по VIN</div>
   </div>
+  
+  <h2>Контакты</h2>
+
+<div class="contacts">
+  <div class="contact-card">
+    <h3>ROKAVTO</h3>
+    <p><strong>Телефон:</strong> <a href="tel:+79221635353">+7 (922) 163-53-53</a></p>
+    <p><strong>Email:</strong> <a href="mailto:info@rokavto.ru">info@rokavto.ru</a></p>
+    <p><strong>Город:</strong> Краснодар</p>
+    <p><strong>График работы:</strong><br>
+      Пн–Пт: 9:00–18:00<br>
+      Сб: 10:00–15:00<br>
+      Вс: выходной
+    </p>
+  </div>
+
+  <div class="contact-card">
+    <h3>Написать нам</h3>
+    <p>
+      Подбор запчастей по VIN, цены, сроки доставки — ответим быстро.
+    </p>
+    <a class="contact-button" href="mailto:info@rokavto.ru">
+      Написать на почту
+    </a>
+  </div>
+</div>
+
 
 </div>
 
