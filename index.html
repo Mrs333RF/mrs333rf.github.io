@@ -286,6 +286,57 @@ footer a {
   text-decoration: none;
   font-weight: bold;
 }
+    /* ===== ORDER FORM ===== */
+.order-form {
+  max-width: 600px;
+  margin-top: 20px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.order-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.order-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  color: #333;
+}
+
+.order-form input,
+.order-form textarea {
+  margin-top: 6px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.order-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.order-form button {
+  margin-top: 10px;
+  padding: 14px;
+  background: #0b2c5d;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.order-form button:hover {
+  background: #1e90ff;
+}
 
   </style>
 </head>
@@ -389,6 +440,35 @@ footer a {
       Вс: выходной
     </p>
   </div>
+
+  <h2>Оставить заявку</h2>
+
+<div class="order-form">
+  <form action="mailto:info@rokavto.ru" method="post" enctype="text/plain">
+    
+    <label>
+      Ваше имя
+      <input type="text" name="Имя" placeholder="Иван" required>
+    </label>
+
+    <label>
+      Телефон
+      <input type="tel" name="Телефон" placeholder="+7 (___) ___-__-__" required>
+    </label>
+
+    <label>
+      VIN или артикул
+      <input type="text" name="VIN / Артикул" placeholder="VIN или номер детали">
+    </label>
+
+    <label>
+      Комментарий
+      <textarea name="Комментарий" placeholder="Что нужно подобрать?"></textarea>
+    </label>
+
+    <button type="submit">Отправить заявку</button>
+  </form>
+</div>
 
   <div class="contact-card">
     <h3>Написать нам</h3>
